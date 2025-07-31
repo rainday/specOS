@@ -39,18 +39,24 @@ USE these flags throughout execution
 </step_metadata>
 
 <instructions>
-  ACTION: Copy plan-notes template from instructions/plan-notes.md to .claude/docs/plan-notes.md
+  ACTION: Copy the EXACT content from instructions/plan-notes.md to .claude/docs/plan-notes.md
+  REQUIREMENT: Copy the complete template including all sections, examples, and formatting
+  VERIFY: Ensure the copied file contains the full comprehensive template with tech stack defaults
   INFORM: User to fill out the plan notes file with their product information
   ASK: "Are you ready to proceed with planning?" (wait for "yes")
 </instructions>
 
 <user_instruction>
-I've created a plan notes template at `.claude/docs/plan-notes.md`. Please fill out this file with your product information:
+I've created a comprehensive plan notes template at `.claude/docs/plan-notes.md`. This template includes detailed sections with examples and sensible tech stack defaults. Please fill out this file with your product information:
 
 1. **Fill out the sections** with your specific product details
-2. **Copy and paste any text** - no special formatting needed
-3. **Leave sections empty** if you don't have the information
-4. **Save the file** when you're done
+2. **Use the provided examples** as guides for formatting
+3. **Keep the tech stack defaults** if you're unsure about technical choices
+4. **Copy and paste any text** - no special formatting needed
+5. **Leave sections empty** if you don't have the information
+6. **Save the file** when you're done
+
+The template includes sections for product information, technical stack with defaults, project status, and optional sample code.
 
 Are you ready to proceed with planning?
 </user_instruction>
