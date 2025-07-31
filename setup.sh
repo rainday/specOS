@@ -285,6 +285,18 @@ else
     fi
 fi
 
+# plan-notes.md
+if [ -f "$HOME/.specOS/instructions/plan-notes.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = false ]; then
+    echo "  ⚠️  ~/.specOS/instructions/plan-notes.md already exists - skipping"
+else
+    curl -s -o "$HOME/.specOS/instructions/plan-notes.md" "${BASE_URL}/instructions/plan-notes.md"
+    if [ -f "$HOME/.specOS/instructions/plan-notes.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = true ]; then
+        echo "  ✓ ~/.specOS/instructions/plan-notes.md (overwritten)"
+    else
+        echo "  ✓ ~/.specOS/instructions/plan-notes.md"
+    fi
+fi
+
 # Download Claude Code command files
 echo ""
 echo "📥 Downloading Claude Code command files to ~/.claude/commands/"
