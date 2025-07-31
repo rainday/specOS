@@ -8,6 +8,8 @@ set -e  # Exit on error
 # Initialize flags
 OVERWRITE_INSTRUCTIONS=true
 OVERWRITE_STANDARDS=true
+OVERWRITE_CLAUDE=true
+DEBUG=false
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -16,17 +18,42 @@ while [[ $# -gt 0 ]]; do
             OVERWRITE_INSTRUCTIONS=true
             shift
             ;;
+        --no-overwrite-instructions)
+            OVERWRITE_INSTRUCTIONS=false
+            shift
+            ;;
         --overwrite-standards)
             OVERWRITE_STANDARDS=true
+            shift
+            ;;
+        --no-overwrite-standards)
+            OVERWRITE_STANDARDS=false
+            shift
+            ;;
+        --overwrite-claude)
+            OVERWRITE_CLAUDE=true
+            shift
+            ;;
+        --no-overwrite-claude)
+            OVERWRITE_CLAUDE=false
+            shift
+            ;;
+        --debug)
+            DEBUG=true
             shift
             ;;
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
-            echo "  --overwrite-instructions    Overwrite existing instruction files"
-            echo "  --overwrite-standards       Overwrite existing standards files"
-            echo "  -h, --help                  Show this help message"
+            echo "  --overwrite-instructions       Overwrite existing instruction files (default)"
+            echo "  --no-overwrite-instructions    Skip existing instruction files"
+            echo "  --overwrite-standards          Overwrite existing standards files (default)"
+            echo "  --no-overwrite-standards       Skip existing standards files"
+            echo "  --overwrite-claude             Overwrite existing Claude Code files (default)"
+            echo "  --no-overwrite-claude          Skip existing Claude Code files"
+            echo "  --debug                        Show debug information"
+            echo "  -h, --help                     Show this help message"
             echo ""
             exit 0
             ;;
@@ -41,6 +68,16 @@ done
 echo "🚀 specOS Claude Code Setup"
 echo "============================="
 echo ""
+
+# Debug information
+if [ "$DEBUG" = true ]; then
+    echo "🔍 Debug Information:"
+    echo "  OVERWRITE_INSTRUCTIONS: $OVERWRITE_INSTRUCTIONS"
+    echo "  OVERWRITE_STANDARDS: $OVERWRITE_STANDARDS"
+    echo "  OVERWRITE_CLAUDE: $OVERWRITE_CLAUDE"
+    echo "  BASE_URL: $BASE_URL"
+    echo ""
+fi
 
 # Base URL for raw GitHub content
 BASE_URL="https://raw.githubusercontent.com/rainday/specOS/main"
@@ -176,14 +213,27 @@ echo ""
 echo "📥 Downloading instruction files to ~/.specOS/instructions/"
 
 # plan-product.md
+if [ "$DEBUG" = true ]; then
+    echo "  🔍 Checking plan-product.md:"
+    echo "    File exists: $([ -f "$HOME/.specOS/instructions/plan-product.md" ] && echo "yes" || echo "no")"
+    echo "    OVERWRITE_INSTRUCTIONS: $OVERWRITE_INSTRUCTIONS"
+    echo "    Skip condition: $([ -f "$HOME/.specOS/instructions/plan-product.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = false ] && echo "true" || echo "false")"
+fi
+
 if [ -f "$HOME/.specOS/instructions/plan-product.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = false ]; then
     echo "  ⚠️  ~/.specOS/instructions/plan-product.md already exists - skipping"
 else
-    curl -s -o "$HOME/.specOS/instructions/plan-product.md" "${BASE_URL}/instructions/plan-product.md"
-    if [ -f "$HOME/.specOS/instructions/plan-product.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = true ]; then
-        echo "  ✓ ~/.specOS/instructions/plan-product.md (overwritten)"
+    echo "  📥 Downloading plan-product.md..."
+    if curl -s -o "$HOME/.specOS/instructions/plan-product.md" "${BASE_URL}/instructions/plan-product.md"; then
+        if [ -f "$HOME/.specOS/instructions/plan-product.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = true ]; then
+            echo "  ✓ ~/.specOS/instructions/plan-product.md (overwritten)"
+        else
+            echo "  ✓ ~/.specOS/instructions/plan-product.md"
+        fi
     else
-        echo "  ✓ ~/.specOS/instructions/plan-product.md"
+        echo "  ❌ Failed to download plan-product.md from ${BASE_URL}/instructions/plan-product.md"
+        echo "  💡 Make sure the file exists in the repository and you have internet access"
+        exit 1
     fi
 fi
 
@@ -241,11 +291,21 @@ echo "📥 Downloading Claude Code command files to ~/.claude/commands/"
 
 # Commands
 for cmd in plan-product create-spec execute-tasks analyze-product; do
-    if [ -f "$HOME/.claude/commands/${cmd}.md" ]; then
+    if [ -f "$HOME/.claude/commands/${cmd}.md" ] && [ "$OVERWRITE_CLAUDE" = false ]; then
         echo "  ⚠️  ~/.claude/commands/${cmd}.md already exists - skipping"
     else
-        curl -s -o "$HOME/.claude/commands/${cmd}.md" "${BASE_URL}/commands/${cmd}.md"
-        echo "  ✓ ~/.claude/commands/${cmd}.md"
+        echo "  📥 Downloading ${cmd}.md..."
+        if curl -s -o "$HOME/.claude/commands/${cmd}.md" "${BASE_URL}/commands/${cmd}.md"; then
+            if [ -f "$HOME/.claude/commands/${cmd}.md" ] && [ "$OVERWRITE_CLAUDE" = true ]; then
+                echo "  ✓ ~/.claude/commands/${cmd}.md (overwritten)"
+            else
+                echo "  ✓ ~/.claude/commands/${cmd}.md"
+            fi
+        else
+            echo "  ❌ Failed to download ${cmd}.md from ${BASE_URL}/commands/${cmd}.md"
+            echo "  💡 Make sure the file exists in the repository and you have internet access"
+            exit 1
+        fi
     fi
 done
 
@@ -253,15 +313,25 @@ done
 echo ""
 echo "📥 Downloading Claude Code configuration..."
 
-if [ -f "$HOME/.claude/CLAUDE.md" ]; then
+if [ -f "$HOME/.claude/CLAUDE.md" ] && [ "$OVERWRITE_CLAUDE" = false ]; then
     echo "  ⚠️  ~/.claude/CLAUDE.md already exists - installing to project directory"
     # Create .claude directory in current project if it doesn't exist
     mkdir -p ".claude"
     curl -s -o ".claude/CLAUDE.md" "${BASE_URL}/claude-code/user/CLAUDE.md"
     echo "  ✓ .claude/CLAUDE.md (project directory)"
 else
-    curl -s -o "$HOME/.claude/CLAUDE.md" "${BASE_URL}/claude-code/user/CLAUDE.md"
-    echo "  ✓ ~/.claude/CLAUDE.md"
+    echo "  📥 Downloading CLAUDE.md..."
+    if curl -s -o "$HOME/.claude/CLAUDE.md" "${BASE_URL}/claude-code/user/CLAUDE.md"; then
+        if [ -f "$HOME/.claude/CLAUDE.md" ] && [ "$OVERWRITE_CLAUDE" = true ]; then
+            echo "  ✓ ~/.claude/CLAUDE.md (overwritten)"
+        else
+            echo "  ✓ ~/.claude/CLAUDE.md"
+        fi
+    else
+        echo "  ❌ Failed to download CLAUDE.md from ${BASE_URL}/claude-code/user/CLAUDE.md"
+        echo "  💡 Make sure the file exists in the repository and you have internet access"
+        exit 1
+    fi
 fi
 
 # Download Claude Code agents
@@ -272,11 +342,21 @@ echo "📥 Downloading Claude Code subagents to ~/.claude/agents/"
 agents=("code-reviewer" "bug-fixer" "data-scientist" "context-fetcher" "file-creator" "git-workflow")
 
 for agent in "${agents[@]}"; do
-    if [ -f "$HOME/.claude/agents/${agent}.md" ]; then
+    if [ -f "$HOME/.claude/agents/${agent}.md" ] && [ "$OVERWRITE_CLAUDE" = false ]; then
         echo "  ⚠️  ~/.claude/agents/${agent}.md already exists - skipping"
     else
-        curl -s -o "$HOME/.claude/agents/${agent}.md" "${BASE_URL}/claude-code/agents/${agent}.md"
-        echo "  ✓ ~/.claude/agents/${agent}.md"
+        echo "  📥 Downloading ${agent}.md..."
+        if curl -s -o "$HOME/.claude/agents/${agent}.md" "${BASE_URL}/claude-code/agents/${agent}.md"; then
+            if [ -f "$HOME/.claude/agents/${agent}.md" ] && [ "$OVERWRITE_CLAUDE" = true ]; then
+                echo "  ✓ ~/.claude/agents/${agent}.md (overwritten)"
+            else
+                echo "  ✓ ~/.claude/agents/${agent}.md"
+            fi
+        else
+            echo "  ❌ Failed to download ${agent}.md from ${BASE_URL}/claude-code/agents/${agent}.md"
+            echo "  💡 Make sure the file exists in the repository and you have internet access"
+            exit 1
+        fi
     fi
 done
 
@@ -290,9 +370,9 @@ echo "   ~/.claude/commands/      - Claude Code commands"
 echo "   ~/.claude/agents/        - Claude Code specialized subagents"
 echo "   ~/.claude/CLAUDE.md      - Claude Code configuration"
 echo ""
-if [ "$OVERWRITE_INSTRUCTIONS" = false ] && [ "$OVERWRITE_STANDARDS" = false ]; then
+if [ "$OVERWRITE_INSTRUCTIONS" = false ] && [ "$OVERWRITE_STANDARDS" = false ] && [ "$OVERWRITE_CLAUDE" = false ]; then
     echo "💡 Note: Existing files were skipped to preserve your customizations"
-    echo "   Use --overwrite-instructions or --overwrite-standards to update specific files"
+    echo "   Use --overwrite-instructions, --overwrite-standards, or --overwrite-claude to update specific files"
 else
     echo "💡 Note: Some files were overwritten based on your flags"
     if [ "$OVERWRITE_INSTRUCTIONS" = false ]; then
@@ -300,6 +380,9 @@ else
     fi
     if [ "$OVERWRITE_STANDARDS" = false ]; then
         echo "   Existing standards files were preserved"
+    fi
+    if [ "$OVERWRITE_CLAUDE" = false ]; then
+        echo "   Existing Claude Code files were preserved"
     fi
 fi
 echo ""
