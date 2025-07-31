@@ -251,10 +251,14 @@ done
 
 # Download Claude Code user CLAUDE.md
 echo ""
-echo "📥 Downloading Claude Code configuration to ~/.claude/"
+echo "📥 Downloading Claude Code configuration..."
 
 if [ -f "$HOME/.claude/CLAUDE.md" ]; then
-    echo "  ⚠️  ~/.claude/CLAUDE.md already exists - skipping"
+    echo "  ⚠️  ~/.claude/CLAUDE.md already exists - installing to project directory"
+    # Create .claude directory in current project if it doesn't exist
+    mkdir -p ".claude"
+    curl -s -o ".claude/CLAUDE.md" "${BASE_URL}/claude-code/user/CLAUDE.md"
+    echo "  ✓ .claude/CLAUDE.md (project directory)"
 else
     curl -s -o "$HOME/.claude/CLAUDE.md" "${BASE_URL}/claude-code/user/CLAUDE.md"
     echo "  ✓ ~/.claude/CLAUDE.md"
