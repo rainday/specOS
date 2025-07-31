@@ -1,4 +1,4 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+<!-- Version: 1.0.2 - Add version numbers to all markdown files -->
 
 ---
 
@@ -140,14 +140,14 @@ You can add this information to `.claude/docs/plan-notes.md` and let me know whe
 
 <file_structure>
 .specOS/
-?��??� product/
-?��??� mission.md # Product vision and purpose
-?��??� mission-lite.md # Condensed mission for AI context
-?��??� tech-stack.md # Technical architecture
-?��??� roadmap.md # Development phases
-?��??� requirements.md # Product requirements and decisions
-?��??� structure.md # Product architecture and component structure
-?��??� style-guide.md # UI color settings and design guidelines
+├── product/
+│ ├── mission.md # Product vision and purpose
+│ ├── mission-lite.md # Condensed mission for AI context
+│ ├── tech-stack.md # Technical architecture
+│ ├── roadmap.md # Development phases
+│ ├── requirements.md # Product requirements and decisions
+│ ├── structure.md # Product architecture and component structure
+│ └── style-guide.md # UI color settings and design guidelines
 </file_structure>
 
 <git_config>
