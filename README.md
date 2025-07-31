@@ -38,7 +38,25 @@ specOS/
 
 ## 🚀 Getting Started
 
-### Installation
+### Quick Installation
+
+Run this command in your project directory to install specOS:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/rainday/specOS/main/setup.sh | bash
+```
+
+**What this does:**
+
+- Downloads and executes the specOS setup script
+- Creates necessary directories in your home folder (`~/.specOS/`, `~/.claude/`)
+- Downloads all development standards, instructions, and Claude Code configurations
+- Sets up specialized AI agents for code review, bug fixing, data analysis, and more
+- Configures Claude Code commands for seamless integration
+
+### Manual Installation
+
+Alternatively, you can clone the repository and run the setup manually:
 
 ```bash
 # Clone the repository
@@ -73,6 +91,87 @@ cd specOS
    ```bash
    /execute-tasks
    ```
+
+## 🎯 How to Use specOS
+
+### Getting Started with a New Project
+
+1. **Install specOS** (if not already done):
+
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/rainday/specOS/main/setup.sh | bash
+   ```
+
+2. **Initialize your project**:
+   ```bash
+   /plan-product
+   ```
+   This will guide you through:
+   - Defining your product mission and vision
+   - Identifying target users and key features
+   - Setting up your tech stack
+   - Creating initial project structure
+
+### Working with Existing Projects
+
+1. **Analyze your codebase**:
+   ```bash
+   /analyze-product
+   ```
+   This will:
+   - Review your existing code structure
+   - Identify areas for improvement
+   - Suggest optimizations
+   - Create project documentation
+
+### Feature Development Workflow
+
+1. **Create a feature specification**:
+
+   ```bash
+   /create-spec
+   ```
+
+   Or simply ask: "What's next?" or "Create a spec for [feature name]"
+
+2. **Implement the feature**:
+   ```bash
+   /execute-task
+   ```
+   This follows TDD approach with:
+   - Test creation
+   - Implementation
+   - Code review
+   - Quality assurance
+
+### Using Specialized Agents
+
+specOS includes several specialized AI agents that activate automatically:
+
+- **🔧 Bug Fixer**: Automatically detects and fixes code issues
+- **📝 Code Reviewer**: Reviews code for quality, security, and best practices
+- **📊 Data Scientist**: Analyzes SQL queries and provides data insights
+- **🔍 Context Fetcher**: Retrieves relevant information from your codebase
+- **📄 File Creator**: Generates files from templates
+- **🔄 Git Workflow**: Manages git operations and commits
+
+### Best Practices
+
+1. **Start with planning**: Always use `/plan-product` for new projects
+2. **Be specific**: When creating specs, provide clear requirements
+3. **Iterate**: Use the agents to review and improve your code
+4. **Document**: Let specOS handle documentation automatically
+5. **Test first**: The framework follows TDD principles
+
+### Common Commands
+
+| Command            | Purpose                      | When to Use                |
+| ------------------ | ---------------------------- | -------------------------- |
+| `/plan-product`    | Initialize new project       | Starting a new project     |
+| `/analyze-product` | Analyze existing codebase    | Working with existing code |
+| `/create-spec`     | Create feature specification | Adding new features        |
+| `/execute-task`    | Implement features           | Building functionality     |
+| `What's next?`     | Get next steps               | General guidance           |
 
 ## 📋 Workflow
 
