@@ -40,28 +40,14 @@ Install specOS into an existing codebase, analyze current product state and prog
     PROCEED: to Step 2 (analyze existing codebase)
   
   IF plan-notes.md DOES NOT EXIST:
-    CHOOSE: One of the following approaches:
-    
-    APPROACH A (Recommended): Create plan-notes.md
-      ACTION: Copy plan-notes template from instructions/plan-notes.md to .claude/docs/plan-notes.md
-      INFORM: User to fill out the plan notes file
-      WAIT: For user to complete plan notes
-      PROCEED: to Step 2 after plan notes are filled
-    
-    APPROACH B (Alternative): Ask user to call plan-product first
-      INFORM: "Plan notes are missing. Please run @~/.specOS/instructions/plan-product.md first to create plan notes."
-      STOP: Execution until plan-product is called
+    INFORM: User to run plan-product.md first
+    STOP: Execution until plan-product is called
 </instructions>
 
 <user_instruction_plan_notes_missing>
 I notice that plan notes are missing (`.claude/docs/plan-notes.md`).
 
-I can either:
-
-1. **Create plan notes now** - I'll create the template and you can fill it out
-2. **Call plan-product first** - You can run `@~/.specOS/instructions/plan-product.md` to create plan notes
-
-Which approach would you prefer?
+Please run `/plan-product` first to create plan notes, then return here to analyze your existing codebase.
 </user_instruction_plan_notes_missing>
 
 </step>
@@ -128,114 +114,20 @@ To properly set up specOS, I need to understand:
 
 </step>
 
-<step number="4" name="execute_plan_product">
+<step number="4" name="summary">
 
-### Step 4: Execute Plan-Product with Context
-
-<step_metadata>
-<uses>@~/.specOS/instructions/plan-product.md</uses>
-<modifies>standard flow for existing products</modifies>
-</step_metadata>
-
-<execution_parameters>
-<main_idea>[DERIVED_FROM_ANALYSIS_AND_USER_INPUT]</main_idea>
-<key_features>[IDENTIFIED_IMPLEMENTED_AND_PLANNED_FEATURES]</key_features>
-<target_users>[FROM_USER_CONTEXT]</target_users>
-<tech_stack>[DETECTED_FROM_CODEBASE]</tech_stack>
-</execution_parameters>
-
-<execution_prompt>
-@~/.specOS/instructions/plan-product.md
-
-I'm installing specOS into an existing product. Here's what I've gathered from Steps 2-3:
-
-**Main Idea**: [SUMMARY_FROM_ANALYSIS_AND_CONTEXT]
-
-**Key Features**:
-
-- Already Implemented: [LIST_FROM_ANALYSIS]
-- Planned: [LIST_FROM_USER]
-
-**Target Users**: [FROM_USER_RESPONSE]
-
-**Tech Stack**: [DETECTED_STACK_WITH_VERSIONS]
-</execution_prompt>
-
-<instructions>
-  ACTION: Execute plan-product.md with gathered information
-  PROVIDE: All context as structured input
-  ALLOW: plan-product.md to create .specOS/product/ structure
-</instructions>
-
-</step>
-
-<step number="5" name="customize_generated_files">
-
-### Step 5: Customize Generated Documentation
+### Step 4: Summary and Next Steps
 
 <step_metadata>
-<refines>generated documentation</refines>
-<ensures>accuracy for existing product</ensures>
+<provides>analysis summary</provides>
+<directs>user to next actions</directs>
 </step_metadata>
-
-<customization_tasks>
-<roadmap_adjustment> - Mark completed features as done - Move implemented items to "Phase 0: Already Completed" - Adjust future phases based on actual progress
-</roadmap_adjustment>
-<tech_stack_verification> - Verify detected versions are correct - Add any missing infrastructure details - Document actual deployment setup
-</tech_stack_verification>
-<decisions_documentation> - Add historical decisions that shaped current architecture - Document why certain technologies were chosen - Capture any pivots or major changes
-</decisions_documentation>
-</customization_tasks>
-
-<roadmap_template>
-
-## Phase 0: Already Completed
-
-The following features have been implemented:
-
-- [x] [FEATURE_1] - [DESCRIPTION_FROM_CODE]
-- [x] [FEATURE_2] - [DESCRIPTION_FROM_CODE]
-- [x] [FEATURE_3] - [DESCRIPTION_FROM_CODE]
-
-## Phase 1: Current Development
-
-- [ ] [IN_PROGRESS_FEATURE] - [DESCRIPTION]
-
-[CONTINUE_WITH_STANDARD_PHASES]
-</roadmap_template>
-
-<instructions>
-  ACTION: Update generated files to reflect reality
-  MODIFY: Roadmap to show completed work
-  VERIFY: Tech stack matches actual implementation
-  ADD: Historical context to requirements.md
-</instructions>
-
-</step>
-
-<step number="6" name="final_verification">
-
-### Step 6: Final Verification and Summary
-
-<step_metadata>
-<verifies>installation completeness</verifies>
-<provides>next steps for user</provides>
-</step_metadata>
-
-<verification_checklist>
-
-- [ ] Plan notes created or verified (.claude/docs/plan-notes.md)
-- [ ] .specOS/product/ directory created
-- [ ] All product documentation reflects actual codebase
-- [ ] Roadmap shows completed and planned features accurately
-- [ ] Tech stack matches installed dependencies
-      </verification_checklist>
 
 <summary_template>
 
-## ✅ specOS Successfully Installed
+## 📊 Codebase Analysis Complete
 
-I've analyzed your [PRODUCT_TYPE] codebase and set up specOS with documentation that reflects your actual implementation.
+I've analyzed your existing codebase and gathered the following insights:
 
 ### What I Found
 
@@ -244,29 +136,25 @@ I've analyzed your [PRODUCT_TYPE] codebase and set up specOS with documentation 
 - **Code Style**: [DETECTED_PATTERNS]
 - **Current Phase**: [IDENTIFIED_DEVELOPMENT_STAGE]
 
-### What Was Created
-
-- ✓ Product documentation in `.specOS/product/`
-- ✓ Roadmap with completed work in Phase 0
-- ✓ Tech stack reflecting actual dependencies
-
 ### Next Steps
 
-1. Review the generated documentation in `.specOS/product/`
-2. Make any necessary adjustments to reflect your vision
-3. See the specOS README for usage instructions: https://github.com/rainday/specOS
-4. Start using specOS for your next feature:
+1. **Review the analysis** above and confirm it's accurate
+2. **Run plan-product** to create your product documentation:
+   ```
+   /plan-product
+   ```
+3. **Start using specOS** for your next feature:
    ```
    @~/.specOS/instructions/create-spec.md
    ```
 
-Your codebase is now specOS-enabled! 🚀
+Your codebase is ready for specOS integration! 🚀
 </summary_template>
 
 <instructions>
-  ACTION: Verify all files created correctly
-  SUMMARIZE: What was found and created
+  ACTION: Summarize the analysis findings
   PROVIDE: Clear next steps for user
+  DIRECT: User to run plan-product.md
 </instructions>
 
 </step>
@@ -293,6 +181,6 @@ Your codebase is now specOS-enabled! 🚀
 ## Execution Summary
 
 <final_checklist>
-<verify> - [ ] Plan notes created or verified - [ ] Codebase analyzed thoroughly - [ ] User context gathered - [ ] plan-product.md executed with proper context - [ ] Documentation customized for existing product - [ ] Team can adopt specOS workflow
+<verify> - [ ] Plan notes verified (.claude/docs/plan-notes.md) - [ ] Codebase analyzed thoroughly - [ ] User context gathered - [ ] Analysis summary provided - [ ] User directed to run plan-product.md
 </verify>
 </final_checklist>
