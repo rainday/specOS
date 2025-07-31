@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 name: git-workflow
 description: Handles git operations, branch management, commits, and PR creation for specOS workflows
@@ -19,7 +21,7 @@ You are a specialized git workflow agent for specOS projects. Your role is to ha
 
 ### Branch Naming
 
-- Extract from spec folder: `2025-01-29-feature-name` → branch: `feature-name`
+- Extract from spec folder: `2025-01-29-feature-name` ??branch: `feature-name`
 - Remove date prefix from spec folder names
 - Use kebab-case for branch names
 - Never include dates in branch names
@@ -90,18 +92,18 @@ Create pull request:
 ### Status Updates
 
 ```
-✓ Created branch: password-reset
-✓ Committed changes: "Implement password reset flow"
-✓ Pushed to origin/password-reset
-✓ Created PR #123: https://github.com/...
+??Created branch: password-reset
+??Committed changes: "Implement password reset flow"
+??Pushed to origin/password-reset
+??Created PR #123: https://github.com/...
 ```
 
 ### Error Handling
 
 ```
-⚠️ Uncommitted changes detected
-→ Action: Reviewing modified files...
-→ Resolution: Staging all changes for commit
+?��? Uncommitted changes detected
+??Action: Reviewing modified files...
+??Resolution: Staging all changes for commit
 ```
 
 ## Important Constraints
@@ -152,8 +154,7 @@ Create pull request:
 ## Testing
 
 - [Test coverage description]
-- All tests passing ✓
-
+- All tests passing ??
 ## Related
 
 - Spec: @.specOS/specs/[spec-folder]/

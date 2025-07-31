@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 # CSS Style Guide
 
 We always use the latest version of TailwindCSS for all CSS.

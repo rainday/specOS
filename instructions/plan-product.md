@@ -1,9 +1,13 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
+
 description: Product Planning Rules for specOS
 globs:
 alwaysApply: false
 version: 4.0
 encoding: UTF-8
+
 ---
 
 # Product Planning Rules
@@ -39,9 +43,9 @@ USE these flags throughout execution
 </step_metadata>
 
 <instructions>
-  ACTION: Copy the EXACT content from instructions/plan-notes.md to .claude/docs/plan-notes.md
-  REQUIREMENT: Copy the complete template including all sections, examples, and formatting
-  VERIFY: Ensure the copied file contains the full comprehensive template with tech stack defaults
+  ACTION: Copy the EXACT content from standards/plan-notes-template.md to .claude/docs/plan-notes.md
+  REQUIREMENT: Copy the complete template without any modifications or editing
+  VERIFY: Ensure the copied file contains the full comprehensive template exactly as it appears in standards
   INFORM: User to fill out the plan notes file with their product information
   ASK: "Are you ready to proceed with planning?" (wait for "yes")
 </instructions>
@@ -75,7 +79,7 @@ Are you ready to proceed with planning?
 
 <data_sources>
 <primary>plan_notes_file</primary>
-<fallback_sequence> 1. @~/.specOS/standards/tech-stack.md 2. @~/.claude/CLAUDE.md
+<fallback_sequence> 1. @~/.specOS/standards/tech-stack.md 2. @~/.claude/CLAUDE.md 3. @~/.specOS/standards/plan-notes-template.md
 </fallback_sequence>
 </data_sources>
 
@@ -136,14 +140,14 @@ You can add this information to `.claude/docs/plan-notes.md` and let me know whe
 
 <file_structure>
 .specOS/
-└── product/
-├── mission.md # Product vision and purpose
-├── mission-lite.md # Condensed mission for AI context
-├── tech-stack.md # Technical architecture
-├── roadmap.md # Development phases
-├── requirements.md # Product requirements and decisions
-├── structure.md # Product architecture and component structure
-└── style-guide.md # UI color settings and design guidelines
+?��??� product/
+?��??� mission.md # Product vision and purpose
+?��??� mission-lite.md # Condensed mission for AI context
+?��??� tech-stack.md # Technical architecture
+?��??� roadmap.md # Development phases
+?��??� requirements.md # Product requirements and decisions
+?��??� structure.md # Product architecture and component structure
+?��??� style-guide.md # UI color settings and design guidelines
 </file_structure>
 
 <git_config>

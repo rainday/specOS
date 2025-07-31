@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 # Security Standards
 
 ## Context
@@ -103,12 +105,12 @@ const sessionConfig = {
 ```javascript
 // Use parameterized queries
 const getUserById = async (userId) => {
-  // ✅ Secure - parameterized query
+  // ??Secure - parameterized query
   const query = "SELECT * FROM users WHERE id = ?";
   const [rows] = await db.execute(query, [userId]);
   return rows[0];
 
-  // ❌ Vulnerable - string concatenation
+  // ??Vulnerable - string concatenation
   // const query = `SELECT * FROM users WHERE id = ${userId}`;
 };
 
@@ -156,10 +158,10 @@ const escapeHtml = (text) => {
 
 // React XSS prevention
 const UserDisplay = ({ user }) => {
-  // ✅ Secure - React automatically escapes
+  // ??Secure - React automatically escapes
   return <div>{user.name}</div>;
 
-  // ❌ Vulnerable - dangerouslySetInnerHTML
+  // ??Vulnerable - dangerouslySetInnerHTML
   // return <div dangerouslySetInnerHTML={{ __html: user.name }} />;
 };
 ```

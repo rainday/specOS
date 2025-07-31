@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 name: bug-fixer
 description: Expert debugging and troubleshooting specialist. Specializes in handling program errors, test failures, and anomalous behavior. MUST BE USED for debugging, error fixing, troubleshooting, and root cause analysis. Skilled in systematic problem diagnosis, error localization, bug resolution, and system diagnostics.

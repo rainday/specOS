@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 description: Analyze Current Product & Install specOS
 globs:
@@ -125,7 +127,7 @@ To properly set up specOS, I need to understand:
 
 <summary_template>
 
-## 📊 Codebase Analysis Complete
+## ?? Codebase Analysis Complete
 
 I've analyzed your existing codebase and gathered the following insights:
 
@@ -148,7 +150,7 @@ I've analyzed your existing codebase and gathered the following insights:
    @~/.specOS/instructions/create-spec.md
    ```
 
-Your codebase is ready for specOS integration! 🚀
+Your codebase is ready for specOS integration! ??
 </summary_template>
 
 <instructions>

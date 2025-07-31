@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 # Testing Standards
 
 ## Context
@@ -9,7 +11,7 @@ Global testing guidelines for specOS projects, ensuring consistent quality and r
 ### Test-Driven Development (TDD)
 
 - **Write tests first** before implementing features
-- **Red-Green-Refactor** cycle: Write failing test â†’ Implement â†’ Refactor
+- **Red-Green-Refactor** cycle: Write failing test ??Implement ??Refactor
 - **Test behavior, not implementation** - focus on what the code does, not how
 - **Keep tests simple** and focused on single responsibilities
 
@@ -49,15 +51,15 @@ Global testing guidelines for specOS projects, ensuring consistent quality and r
 
 ```
 src/
-â”œâ”€â”€ components/
-â”‚   â”œâ”€â”€ UserCard.jsx
-â”‚   â””â”€â”€ UserCard.test.jsx
-â”œâ”€â”€ services/
-â”‚   â”œâ”€â”€ UserService.js
-â”‚   â””â”€â”€ UserService.test.js
-â””â”€â”€ utils/
-    â”œâ”€â”€ dateUtils.js
-    â””â”€â”€ dateUtils.test.js
+?œâ??€ components/
+??  ?œâ??€ UserCard.jsx
+??  ?”â??€ UserCard.test.jsx
+?œâ??€ services/
+??  ?œâ??€ UserService.js
+??  ?”â??€ UserService.test.js
+?”â??€ utils/
+    ?œâ??€ dateUtils.js
+    ?”â??€ dateUtils.test.js
 ```
 
 ### Test File Structure

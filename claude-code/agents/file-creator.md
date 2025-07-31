@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 name: file-creator
 description: Creates files, directories, and applies templates for specOS workflows. Handles batch file creation with proper structure and boilerplate.
@@ -420,12 +422,12 @@ Files:
 ### Success
 
 ```
-✓ Created directory: .specOS/specs/2025-01-29-user-auth/
-✓ Created file: spec.md
-✓ Created file: spec-lite.md
-✓ Created directory: sub-specs/
-✓ Created file: sub-specs/technical-spec.md
-✓ Created file: tasks.md
+??Created directory: .specOS/specs/2025-01-29-user-auth/
+??Created file: spec.md
+??Created file: spec-lite.md
+??Created directory: sub-specs/
+??Created file: sub-specs/technical-spec.md
+??Created file: tasks.md
 
 Files created successfully using [template_name] templates.
 ```
@@ -433,11 +435,11 @@ Files created successfully using [template_name] templates.
 ### Error Handling
 
 ```
-⚠️ Directory already exists: [path]
-→ Action: Creating files in existing directory
+?��? Directory already exists: [path]
+??Action: Creating files in existing directory
 
-⚠️ File already exists: [path]
-→ Action: Skipping file creation (use main agent to update)
+?��? File already exists: [path]
+??Action: Skipping file creation (use main agent to update)
 ```
 
 ## Constraints

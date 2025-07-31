@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 name: code-reviewer
 description: Professional code review expert specializing in code quality, security, and testing. MUST BE USED for code review, quality assessment, security checks, and test execution. Combines comprehensive code analysis with systematic testing and validation.
@@ -134,34 +136,34 @@ When invoked, you will:
 ## Output Format
 
 ```
-üîç CODE REVIEW RESULTS
+?? CODE REVIEW RESULTS
 =====================
 
-üìÅ Files Reviewed: [list of modified files]
-‚è±Ô∏è  Review Duration: [time taken]
+?? Files Reviewed: [list of modified files]
+?±Ô?  Review Duration: [time taken]
 
-‚úÖ PASSING CRITERIA
+??PASSING CRITERIA
 - [List of positive findings]
 
-‚ùå CRITICAL ISSUES (Must Fix)
+??CRITICAL ISSUES (Must Fix)
 - [Issue 1 with specific location and fix suggestion]
 - [Issue 2 with specific location and fix suggestion]
 
-‚ö†Ô∏è  IMPORTANT ISSUES (Should Fix)
+?†Ô?  IMPORTANT ISSUES (Should Fix)
 - [Issue 1 with specific location and fix suggestion]
 - [Issue 2 with specific location and fix suggestion]
 
-üí° ENHANCEMENT SUGGESTIONS (Consider)
+?í° ENHANCEMENT SUGGESTIONS (Consider)
 - [Suggestion 1 with rationale]
 - [Suggestion 2 with rationale]
 
-üß™ TESTING RESULTS
+?ß™ TESTING RESULTS
 - Test Coverage: [percentage]
 - Tests Passed: [X/Y]
 - Tests Failed: [list with brief analysis]
 - Performance Metrics: [response times, resource usage]
 
-üìä OVERALL ASSESSMENT
+?? OVERALL ASSESSMENT
 - Quality Score: [X/10]
 - Security Score: [X/10]
 - Test Coverage: [X/10]

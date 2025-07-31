@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 description: Rules to execute a task and its sub-tasks using specOS
 globs:
@@ -290,20 +292,20 @@ ELSE: - Confirm all task tests passing - Ready to proceed
 <completed>- [x] Task description</completed>
 <incomplete>- [ ] Task description</incomplete>
 <blocked> - [ ] Task description
-тЪая╕П Blocking issue: [DESCRIPTION]
+?ая? Blocking issue: [DESCRIPTION]
 </blocked>
 </update_format>
 
 <blocking_criteria>
 <attempts>maximum 3 different approaches</attempts>
 <action>document blocking issue</action>
-<emoji>тЪая╕П</emoji>
+<emoji>?ая?</emoji>
 </blocking_criteria>
 
 <instructions>
   ACTION: Update tasks.md after each task completion
   MARK: [x] for completed items immediately
-  DOCUMENT: Blocking issues with тЪая╕П emoji
+  DOCUMENT: Blocking issues with ?ая? emoji
   LIMIT: 3 attempts before marking as blocked
 </instructions>
 

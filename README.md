@@ -1,8 +1,10 @@
+<!-- Version: 1.1.2 - Add version numbers to all markdown files -->
+
 # specOS - Structured AI-Assisted Development Framework
 
 specOS is a comprehensive framework for Spec Driven AI-assisted software development, designed to work seamlessly with Claude Code and other AI development tools.
 
-## ğŸ¯ Purpose
+## ?¯ Purpose
 
 specOS provides a systematic approach to:
 
@@ -12,19 +14,19 @@ specOS provides a systematic approach to:
 - **Code Quality**: Automated code review and bug fixing
 - **Project Management**: Git workflow automation and documentation
 
-## ğŸ—ï¸ Architecture
+## ??ï¸?Architecture
 
 ### Core Components
 
 ```
 specOS/
-â”œâ”€â”€ claude-code/          # Claude Code integration
-â”‚   â”œâ”€â”€ agents/          # Specialized AI agents
-â”‚   â””â”€â”€ user/            # User configuration
-â”œâ”€â”€ commands/            # Claude Code commands
-â”œâ”€â”€ instructions/        # Workflow instructions
-â”œâ”€â”€ standards/          # Development standards
-â””â”€â”€ setup.sh           # Installation script
+?œâ??€ claude-code/          # Claude Code integration
+??  ?œâ??€ agents/          # Specialized AI agents
+??  ?”â??€ user/            # User configuration
+?œâ??€ commands/            # Claude Code commands
+?œâ??€ instructions/        # Workflow instructions
+?œâ??€ standards/          # Development standards
+?”â??€ setup.sh           # Installation script
 ```
 
 ### Specialized Agents
@@ -36,7 +38,7 @@ specOS/
 - **file-creator**: Template-based file generation
 - **git-workflow**: Automated git operations
 
-## ğŸš€ Getting Started
+## ?? Getting Started
 
 ### Quick Installation
 
@@ -92,7 +94,7 @@ cd specOS
    /execute-tasks
    ```
 
-## ğŸ¯ How to Use specOS
+## ?¯ How to Use specOS
 
 ### Getting Started with a New Project
 
@@ -148,12 +150,12 @@ cd specOS
 
 specOS includes several specialized AI agents that activate automatically:
 
-- **ğŸ”§ Bug Fixer**: Automatically detects and fixes code issues
-- **ğŸ“ Code Reviewer**: Reviews code for quality, security, and best practices
-- **ğŸ“Š Data Scientist**: Analyzes SQL queries and provides data insights
-- **ğŸ” Context Fetcher**: Retrieves relevant information from your codebase
-- **ğŸ“„ File Creator**: Generates files from templates
-- **ğŸ”„ Git Workflow**: Manages git operations and commits
+- **?”§ Bug Fixer**: Automatically detects and fixes code issues
+- **?? Code Reviewer**: Reviews code for quality, security, and best practices
+- **?? Data Scientist**: Analyzes SQL queries and provides data insights
+- **?? Context Fetcher**: Retrieves relevant information from your codebase
+- **?? File Creator**: Generates files from templates
+- **?? Git Workflow**: Manages git operations and commits
 
 ### Best Practices
 
@@ -173,7 +175,7 @@ specOS includes several specialized AI agents that activate automatically:
 | `/execute-task`    | Implement features           | Building functionality     |
 | `What's next?`     | Get next steps               | General guidance           |
 
-## ğŸ“‹ Workflow
+## ?? Workflow
 
 ### 1. Product Planning
 
@@ -203,7 +205,7 @@ specOS includes several specialized AI agents that activate automatically:
 - Performance optimization
 - Comprehensive testing
 
-## ğŸ› ï¸ Configuration
+## ??ï¸?Configuration
 
 ### Global Standards
 
@@ -217,7 +219,7 @@ specOS includes several specialized AI agents that activate automatically:
 - **Tech Stack**: `.specOS/product/tech-stack.md`
 - **Requirements**: `.specOS/product/requirements.md`
 
-## ğŸ“š Documentation
+## ?? Documentation
 
 ### Instructions
 
@@ -232,7 +234,7 @@ specOS includes several specialized AI agents that activate automatically:
 - **best-practices.md**: Development guidelines
 - **code-style/**: Language-specific style guides
 
-## ğŸ”§ Customization
+## ?”§ Customization
 
 ### Adding Custom Agents
 
@@ -252,7 +254,7 @@ specOS includes several specialized AI agents that activate automatically:
 2. Update command files in `commands/`
 3. Test workflow changes
 
-## ğŸ¤ Contributing
+## ?? Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -260,21 +262,22 @@ specOS includes several specialized AI agents that activate automatically:
 4. Test thoroughly
 5. Submit a pull request
 
-## ğŸ“„ License
+## ?? License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ğŸ†˜ Support
+## ?? Support
 
 - **Documentation**: [GitHub README](https://github.com/rainday/specOS)
 - **Issues**: [GitHub Issues](https://github.com/rainday/specOS/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/rainday/specOS/discussions)
 
-## ğŸ”„ Version History
+## ?? Version History
 
-- **v1.1**: Enhanced spec creation workflow
-- **v1.0**: Initial release with core functionality
+- **v1.1.1** (2024-01-16): æ·»å??ˆæœ¬?§åˆ¶è¦å???Cursor ?ç½®
+- **v1.1.0** (2024-01-15): Enhanced spec creation workflow
+- **v1.0.0** (2024-01-10): Initial release with core functionality
 
 ---
 
-**Built with â¤ï¸ by the Rainday**
+**Built with ?¤ï? by the Rainday**

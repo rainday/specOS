@@ -1,3 +1,5 @@
+<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+
 ---
 description: Rules to initiate execution of a set of tasks using specOS
 globs:
@@ -361,8 +363,7 @@ IF NOT using test-runner agent:
 ## Testing
 
 - [TEST_COVERAGE]
-- All tests passing ‚úì
-  </pr_template>
+- All tests passing ??  </pr_template>
 
 <instructions>
   ACTION: Commit all changes with descriptive message
@@ -450,25 +451,25 @@ afplay /System/Library/Sounds/Glass.aiff
 
 <summary_template>
 
-## ‚úÖ What's been done
+## ??What's been done
 
 1. **[FEATURE_1]** - [ONE_SENTENCE_DESCRIPTION]
 2. **[FEATURE_2]** - [ONE_SENTENCE_DESCRIPTION]
 
-## ‚ö†Ô∏è Issues encountered
+## ?†Ô? Issues encountered
 
 [ONLY_IF_APPLICABLE]
 
 - **[ISSUE_1]** - [DESCRIPTION_AND_REASON]
 
-## üëÄ Ready to test in browser
+## ?? Ready to test in browser
 
 [ONLY_IF_APPLICABLE]
 
 1. [STEP_1_TO_TEST]
 2. [STEP_2_TO_TEST]
 
-## üì¶ Pull Request
+## ?ì¶ Pull Request
 
 View PR: [GITHUB_PR_URL]
 </summary_template>
@@ -494,7 +495,7 @@ View PR: [GITHUB_PR_URL]
 ## Error Handling
 
 <error_protocols>
-<blocking_issues> - document in tasks.md - mark with ‚ö†Ô∏è emoji - include in summary
+<blocking_issues> - document in tasks.md - mark with ?†Ô? emoji - include in summary
 </blocking_issues>
 <test_failures> - fix before proceeding - never commit broken tests
 </test_failures>
