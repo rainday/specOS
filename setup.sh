@@ -166,6 +166,18 @@ else
     fi
 fi
 
+# plan-notes-template.md
+if [ -f "$HOME/.specOS/standards/plan-notes-template.md" ] && [ "$OVERWRITE_STANDARDS" = false ]; then
+    echo "  ⚠️  ~/.specOS/standards/plan-notes-template.md already exists - skipping"
+else
+    curl -s -o "$HOME/.specOS/standards/plan-notes-template.md" "${BASE_URL}/standards/plan-notes-template.md"
+    if [ -f "$HOME/.specOS/standards/plan-notes-template.md" ] && [ "$OVERWRITE_STANDARDS" = true ]; then
+        echo "  ✓ ~/.specOS/standards/plan-notes-template.md (overwritten)"
+    else
+        echo "  ✓ ~/.specOS/standards/plan-notes-template.md"
+    fi
+fi
+
 # Download code-style subdirectory files
 echo ""
 echo "📥 Downloading code style files to ~/.specOS/standards/code-style/"
@@ -282,18 +294,6 @@ else
         echo "  ✓ ~/.specOS/instructions/analyze-product.md (overwritten)"
     else
         echo "  ✓ ~/.specOS/instructions/analyze-product.md"
-    fi
-fi
-
-# plan-notes.md
-if [ -f "$HOME/.specOS/instructions/plan-notes.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = false ]; then
-    echo "  ⚠️  ~/.specOS/instructions/plan-notes.md already exists - skipping"
-else
-    curl -s -o "$HOME/.specOS/instructions/plan-notes.md" "${BASE_URL}/instructions/plan-notes.md"
-    if [ -f "$HOME/.specOS/instructions/plan-notes.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = true ]; then
-        echo "  ✓ ~/.specOS/instructions/plan-notes.md (overwritten)"
-    else
-        echo "  ✓ ~/.specOS/instructions/plan-notes.md"
     fi
 fi
 
