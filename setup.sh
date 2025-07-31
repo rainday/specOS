@@ -6,8 +6,8 @@
 set -e  # Exit on error
 
 # Initialize flags
-OVERWRITE_INSTRUCTIONS=false
-OVERWRITE_STANDARDS=false
+OVERWRITE_INSTRUCTIONS=true
+OVERWRITE_STANDARDS=true
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
