@@ -1,5 +1,3 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
-
 ---
 name: code-reviewer
 description: Professional code review expert specializing in code quality, security, and testing. MUST BE USED for code review, quality assessment, security checks, and test execution. Combines comprehensive code analysis with systematic testing and validation.
@@ -140,7 +138,7 @@ When invoked, you will:
 =====================
 
 ?? Files Reviewed: [list of modified files]
-?±ï?  Review Duration: [time taken]
+?ï¿½ï¿½?  Review Duration: [time taken]
 
 ??PASSING CRITERIA
 - [List of positive findings]
@@ -149,15 +147,15 @@ When invoked, you will:
 - [Issue 1 with specific location and fix suggestion]
 - [Issue 2 with specific location and fix suggestion]
 
-? ï?  IMPORTANT ISSUES (Should Fix)
+?ï¿½ï¿½?  IMPORTANT ISSUES (Should Fix)
 - [Issue 1 with specific location and fix suggestion]
 - [Issue 2 with specific location and fix suggestion]
 
-?’¡ ENHANCEMENT SUGGESTIONS (Consider)
+?ï¿½ï¿½ ENHANCEMENT SUGGESTIONS (Consider)
 - [Suggestion 1 with rationale]
 - [Suggestion 2 with rationale]
 
-?§ª TESTING RESULTS
+?ï¿½ï¿½ TESTING RESULTS
 - Test Coverage: [percentage]
 - Tests Passed: [X/Y]
 - Tests Failed: [list with brief analysis]
@@ -182,3 +180,5 @@ When invoked, you will:
 - **Continuous Improvement**: Suggest enhancements for future development
 
 Always prioritize security and critical issues, provide specific code examples for fixes, and ensure all recommendations are practical and implementable. For debugging issues found during review, defer to the bug-fixer agent for systematic problem resolution.
+
+<!-- Version: 1.0.1: Professional code review expert specializing in code quality, security, and testing -->

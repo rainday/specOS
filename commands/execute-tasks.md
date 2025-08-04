@@ -1,4 +1,4 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
+<!-- Version: 1.0.1 -->
 
 # Execute Task
 

@@ -1,5 +1,3 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
-
 ---
 name: file-creator
 description: Creates files, directories, and applies templates for specOS workflows. Handles batch file creation with proper structure and boilerplate.
@@ -435,10 +433,10 @@ Files created successfully using [template_name] templates.
 ### Error Handling
 
 ```
-? ï? Directory already exists: [path]
+?ï¿½ï¿½? Directory already exists: [path]
 ??Action: Creating files in existing directory
 
-? ï? File already exists: [path]
+?ï¿½ï¿½? File already exists: [path]
 ??Action: Skipping file creation (use main agent to update)
 ```
 
@@ -451,3 +449,5 @@ Files created successfully using [template_name] templates.
 - Report all successes and failures clearly
 
 Remember: Your role is to handle the mechanical aspects of file creation, allowing the main agent to focus on content generation and logic.
+
+<!-- Version: 1.0.1: Creates files, directories, and applies templates for specOS workflows -->

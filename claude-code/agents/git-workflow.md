@@ -1,5 +1,3 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
-
 ---
 name: git-workflow
 description: Handles git operations, branch management, commits, and PR creation for specOS workflows
@@ -101,7 +99,7 @@ Create pull request:
 ### Error Handling
 
 ```
-? ï? Uncommitted changes detected
+?ï¿½ï¿½? Uncommitted changes detected
 ??Action: Reviewing modified files...
 ??Resolution: Staging all changes for commit
 ```
@@ -155,6 +153,7 @@ Create pull request:
 
 - [Test coverage description]
 - All tests passing ??
+
 ## Related
 
 - Spec: @.specOS/specs/[spec-folder]/
@@ -162,3 +161,5 @@ Create pull request:
 ```
 
 Remember: Your goal is to handle git operations efficiently while maintaining clean git history and following project conventions.
+
+<!-- Version: 1.0.1: Handles git operations, branch management, commits, and PR creation for specOS workflows -->

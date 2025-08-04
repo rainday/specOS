@@ -1,5 +1,3 @@
-<!-- Version: 1.0.1 - Add version numbers to all markdown files -->
-
 ---
 name: context-fetcher
 description: Retrieves and extracts relevant information from specOS documentation files. Checks if content is already in context before returning.
@@ -70,3 +68,5 @@ Example usage:
 - "Get the product pitch from mission-lite.md"
 - "Find Ruby style rules from code-style.md"
 - "Extract Task 3 requirements from the password-reset spec"
+
+<!-- Version: 1.0.1: Retrieves and extracts relevant information from specOS documentation files -->
