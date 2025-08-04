@@ -581,6 +581,49 @@ TaskFlow serves distributed software teams who need seamless task coordination a
   </template>
 </section>
 
+<section name="folder_structure">
+  <template>
+    ## Folder Structure
+
+    Based on the tech stack and project requirements, this project follows the recommended folder structure from `@~/.specOS/standards/folder-structure.md`.
+
+    ### Project Root Structure
+
+    ```
+    project-root/
+    [FOLDER_STRUCTURE_BASED_ON_TECH_STACK]
+    ```
+
+    ### Key Organizational Principles
+
+    - **Separation of Concerns**: Clear boundaries between frontend, backend, and shared code
+    - **Feature-Based Organization**: Related functionality grouped together
+    - **Layer Separation**: Data, business logic, and presentation layers separated
+    - **Test Co-location**: Tests alongside the code they test
+    - **Configuration Isolation**: Configuration separate from application code
+
+    ### Naming Conventions
+
+    - **Components**: PascalCase (e.g., `UserProfile.tsx`)
+    - **Utilities**: camelCase (e.g., `dateUtils.ts`)
+    - **Constants**: UPPER_SNAKE_CASE (e.g., `API_ENDPOINTS.ts`)
+    - **Pages/Routes**: kebab-case (e.g., `user-profile.tsx`)
+
+    ### Component Organization
+
+    ```
+    components/
+    ├── ui/                    # Base UI components (Button, Input, Modal)
+    ├── layout/                # Layout components (Header, Sidebar, Footer)
+    ├── forms/                 # Form components (LoginForm, RegistrationForm)
+    └── features/              # Feature-specific components
+        ├── dashboard/         # Dashboard-related components
+        └── user/              # User-related components
+    ```
+
+  </template>
+</section>
+
 <section name="components">
   <template>
     ## Component Structure
@@ -608,9 +651,56 @@ TaskFlow serves distributed software teams who need seamless task coordination a
   </template>
 </section>
 
+<section name="development_workflow">
+  <template>
+    ## Development Workflow
+
+    ### File Organization Best Practices
+
+    - **Keep components small and focused** on single responsibilities
+    - **Use barrel exports** (`index.ts`) for clean imports
+    - **Group related files together** in feature-based folders
+    - **Maintain consistent naming conventions** across the project
+    - **Document folder structure decisions** for team reference
+
+    ### Testing Structure
+
+    ```
+    tests/
+    ├── unit/                  # Unit tests for individual components/functions
+    ├── integration/           # Integration tests for component interactions
+    ├── e2e/                   # End-to-end tests for complete workflows
+    └── fixtures/              # Test data and mock objects
+    ```
+
+    ### Configuration Management
+
+    - **Environment-specific configs** in `config/` directory
+    - **Build tool configurations** at project root
+    - **TypeScript configuration** with strict mode enabled
+    - **Linting and formatting** rules consistently applied
+
+  </template>
+</section>
+
 <instructions>
-  ACTION: Create structure.md with product architecture details
-  DOCUMENT: System structure based on tech stack and requirements
+  ACTION: Create structure.md with comprehensive product architecture details
+  INCLUDE: Folder structure based on tech stack from standards/folder-structure.md
+  DOCUMENT: System structure, component organization, and development workflow
+  
+  FOLDER_STRUCTURE_LOGIC:
+  IF tech_stack.javascript_framework = "React" AND tech_stack.application_framework = "Express.js":
+    USE: React + Node.js + PostgreSQL structure
+  ELSE IF tech_stack.javascript_framework = "Next.js":
+    USE: Next.js + PostgreSQL structure
+  ELSE IF tech_stack.javascript_framework = "React" AND tech_stack.application_framework = "separate":
+    USE: Express.js + React (Separate Repos) structure
+  ELSE:
+    USE: React + Node.js + PostgreSQL structure (default)
+    
+  REFERENCE: Use tech stack information to determine appropriate folder structure
+  VALIDATE: Ensure structure aligns with chosen technology stack
+  INCLUDE: Specific folder structure template based on tech stack choice
 </instructions>
 
 </step>
