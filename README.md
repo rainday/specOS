@@ -94,7 +94,7 @@ cd specOS
    /execute-tasks
    ```
 
-## ?�� How to Use specOS
+## How to Use specOS
 
 ### Getting Started with a New Project
 
